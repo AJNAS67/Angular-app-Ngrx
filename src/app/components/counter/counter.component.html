@@ -1,4 +1,6 @@
 <p>counter works!</p>
 <button (click)="incriment()">Incriment</button>
-<p>10</p>
+<p>{{count$ |async}}</p>
 <button (click)="decriment()">Decriment</button>
+<br>
+<button (click)="reset()">Reset</button>
