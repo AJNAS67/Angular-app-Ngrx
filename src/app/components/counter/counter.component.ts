@@ -9,11 +9,12 @@ import {
   increment,
   reset,
 } from '../../states/counter/counter.actions';
+import { NumberonlyDirective } from '../../directives/numberonly.directive';
 
 @Component({
   selector: 'app-counter',
   standalone: true,
-  imports: [AsyncPipe],
+  imports: [AsyncPipe,NumberonlyDirective],
   templateUrl: './counter.component.html',
   styleUrl: './counter.component.css',
 })
@@ -30,5 +31,9 @@ export class CounterComponent {
   }
   reset() {
     this.store.dispatch(reset());
+  }
+  onKeyPress(event:KeyboardEvent){
+    console.log(event);
+    
   }
 }
