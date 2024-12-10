@@ -1,13 +1,24 @@
-<div class="row">
-    <div class="col-md-12">
-        <!-- <app-counter/> -->
-         <app-counter-output/>
-        <!-- <app-counter-output [counter]="counter"/> -->
-    
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <!-- <app-home /> -->
+      <div class="row">
+        <div class="col-md-12">
+          <!-- <app-counter/> -->
+          <app-counter-output />
+          <!-- <app-counter-output [counter]="counter"/> -->
+        </div>
+        <div class="my-3">
+          <app-show-name></app-show-name>
+        </div>
+        <div class="my-3">
+          <!-- <app-counter-button  (increment)="onIncrement()" (decrement)="onDecrement()" (reset)="onReset()" /> -->
+          <app-counter-button />
+        </div>
+        <div class="my-3">
+          <app-custom-counter />
+        </div>
+      </div>
     </div>
-    <div class="my-3">
-        <!-- <app-counter-button  (increment)="onIncrement()" (decrement)="onDecrement()" (reset)="onReset()" /> -->
-        <app-counter-button   />
-
-</div>
+  </div>
 </div>

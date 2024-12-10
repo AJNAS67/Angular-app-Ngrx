@@ -5,11 +5,13 @@ import { CounterOutputComponent } from '../counter-output/counter-output.compone
 import { Store } from '@ngrx/store';
 import { AppState } from '../../states/app.state';
 import { decrement, increment, reset } from '../../states/counter/counter.actions';
+import { CustomCounterComponent } from '../custom-counter/custom-counter.component';
+import { ShowNameComponent } from '../show-name/show-name.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CounterOutputComponent, CounterButtonComponent],
+  imports: [CounterOutputComponent, CounterButtonComponent,CustomCounterComponent,ShowNameComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })

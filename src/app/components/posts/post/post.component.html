@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-8">
+      <h3>Posts List</h3>
+      <div>
+        <a [routerLink]="['/post/add']" class="btn btn-primary">Add Post</a>
+      </div>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (item of posts$ |async; track $index) {
+          <tr>
+            <td>{{ item.id }}</td>
+            <td>{{ item.title }}</td>
+            <td>{{ item.description }}</td>
+          </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+    <div class="col-md-4">
+        <router-outlet/>
+
+    </div>
+  </div>
+</div>

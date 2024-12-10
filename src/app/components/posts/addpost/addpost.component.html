@@ -1,0 +1,30 @@
+<div class="row">
+  <div class="col-md-12">
+    <h3>Add Post</h3>
+    <hr />
+    <form [formGroup]="postForm">
+      <div class="mb-3">
+        <label for="Title">Title</label>
+        <input class="form-control" type="text" formControlName="title" />
+        @if (postForm.get('title')?.touched && !postForm.get('title')?.valid)  {
+            @if (postForm.get('title')?.errors?.['required']) {
+                <small class="text-danger">Title is required</small>
+            }
+            @if (postForm.get('title')?.errors?.['minLength']) {
+              <small class="text-danger">Title should be min 6 characters</small>
+            }
+
+            
+        }
+      </div>
+      <div class="mb-3">
+        <label for="description">Description</label>
+        <textarea name="" id="" class="form-control" formControlName="description"></textarea>
+        <small class="text-danger">{{ showDescriptionError() }}</small>
+      </div>
+      <div class="my-3">
+        <button type="submit" [disabled]="!postForm.valid" class="btn btn-primary" (click)="addOnPost()">Add Post</button>
+      </div>
+    </form>
+  </div>
+</div>
