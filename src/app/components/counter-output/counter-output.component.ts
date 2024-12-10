@@ -22,7 +22,8 @@ export class CounterOutputComponent  implements OnInit{
 
   }
   ngOnInit(): void {
-this.store.select('counter').subscribe((data)=>this.counter1=data.count)
+// this.store.select('counter').subscribe((data)=>this.counter1=data.count)
+this.store.select(selectCount).subscribe((data)=>this.counter1=data)
   }
 @Input() counter!:number
 }
